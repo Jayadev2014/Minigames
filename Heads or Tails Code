@@ -1,0 +1,38 @@
+ import java.util.Random;
+import java.util.Scanner;
+public class Main{
+  public static void main(String[] args){
+    Scanner scanner = new Scanner(System.in);
+    int points = 0;
+    String[] words = {"Heads","Tails"};
+    
+    Random random = new Random();
+    
+    System.out.println("Welcome to Heads and Tails.");
+    
+    while(true){
+    
+    System.out.println("Type in Heads or Tails ");
+    
+    String user_choice = scanner.nextLine();
+    
+    String randomWord = words[random.nextInt(words.length)];
+    
+    System.out.println("System: " + randomWord);
+    
+    
+    if(randomWord.equalsIgnoreCase(user_choice)){
+        points++;
+        System.out.println("You are at " + points + " point(s)");
+        
+    }        
+    else{
+        points--;
+        System.out.println("You are at " + points + " point(s)");
+    }
+    }
+
+        
+
+  }
+}
