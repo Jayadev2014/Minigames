@@ -1,0 +1,73 @@
+import java.util.Random;
+import java.util.Scanner;
+public class Main{
+  public static void main(String[] args){
+    Scanner scanner = new Scanner(System.in);
+    Random random = new Random();
+    int points = 0;
+    
+    System.out.println("Welcome to the Dice Betting Game");
+    
+    while(true){
+    System.out.println("Please Pick one of the following: Bot_1 or Bot_2");
+    
+    String user_choice = scanner.nextLine();
+        
+    int bot_1_choice = random.nextInt(1,7);
+        System.out.println("Bot 1 rolled a " + bot_1_choice);
+    
+    int bot_2_choice = random.nextInt(1,7);
+    System.out.println("Bot 2 rolled a " + bot_2_choice);
+    
+    
+    if(bot_1_choice > bot_2_choice){
+        System.out.println("Bot 1 rolled a higher number than Bot 2");
+    }
+    else if(bot_2_choice > bot_1_choice){
+        System.out.println("Bot 2 rolled a higher number than Bot 2");
+    }
+    else{
+        System.out.println("They both rolled the same number");
+    }
+    
+    
+    if(bot_1_choice > bot_2_choice & "Bot_1".equalsIgnoreCase(user_choice.trim())){
+        System.out.println("Your Prediction was Right!!");
+        points++;
+        System.out.println("You have " + points + " points");
+    }
+   else if(bot_2_choice > bot_1_choice & "Bot_2".equalsIgnoreCase(user_choice.trim())){
+       System.out.println("Your Prediction was Right!!");
+       points++;
+       System.out.println("You have " + points + " points");
+   }
+   else if(bot_2_choice == bot_1_choice){
+       System.out.println("Please Pick one of the following: Bot_1 or Bot_2");
+    
+     user_choice = scanner.nextLine();
+    
+     bot_1_choice = random.nextInt(1,7);
+        System.out.println("Bot 1 rolled a " + bot_1_choice);
+    
+     bot_2_choice = random.nextInt(1,7);
+    
+    System.out.println("Bot 2 rolled a " + bot_2_choice);
+        if(bot_1_choice > bot_2_choice & "Bot_1".equalsIgnoreCase(user_choice.trim())){
+        System.out.println("Your Prediction was Right!!");
+        points++;
+        System.out.println("You have " + points + " points");
+    }
+   else if(bot_2_choice > bot_1_choice & "Bot_2".equalsIgnoreCase(user_choice.trim())){
+       System.out.println("Your Prediction was Right!!");
+       points++;
+       System.out.println("You have " + points + " points");
+   }
+   }
+     else{  
+         System.out.println("Your Prediction was Wrong!!");
+       points--;
+       System.out.println("You have " + points + " points");
+     }
+    }
+  }
+}
