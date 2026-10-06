@@ -1,0 +1,55 @@
+import java.util.Random;
+import java.util.Scanner;
+public class MyClass {
+  public static void main(String args[]) {
+     
+     Scanner scanner = new Scanner(System.in);
+     Random random = new Random();
+     
+     int RandomNumber = random.nextInt(1,101);
+     
+     System.out.println("Welcome to Higher or lower game(1-100)");
+     System.out.println("You have three guesses left");
+     
+     int user_choice = scanner.nextInt();
+     
+     if(user_choice > RandomNumber){
+            System.out.println("Lower");
+     }
+     else if(user_choice < RandomNumber){
+         System.out.println("Higher");
+     }
+     else if(user_choice == RandomNumber){
+         System.out.println("Congratulations, you have guessed the number");
+     }
+         
+         
+          System.out.println("You have two guesses left");
+     
+     int user_choice_2 = scanner.nextInt();
+     
+     if(user_choice_2 > RandomNumber){
+            System.out.println("Lower");
+     }
+     else if(user_choice_2 < RandomNumber){
+         System.out.println("Higher");
+     }
+     else if(user_choice_2 == RandomNumber){
+         System.out.println("Congratulations, you have guessed the number");
+     }
+     
+     
+               System.out.println("You have one guess left");
+     
+     int user_choice_3 = scanner.nextInt();
+     
+      if(user_choice_3 == RandomNumber){
+         System.out.println("Congratulations, you have guessed the number");
+     }
+        else{
+            System.out.println("You are wrong. The number was " + RandomNumber);
+        }
+     
+
+  }
+}
